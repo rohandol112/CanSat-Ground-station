@@ -7,13 +7,37 @@ function Home({ sensorData }) {
   const navigate = useNavigate();
   const [showChatbot, setShowChatbot] = useState(false);
   
+  // Container styles for centering content
+  const centerContainerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    marginTop: '2rem'
+  };
+  
+  // Container for button groups
+  const buttonGroupStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '1rem',
+    width: '100%'
+  };
+  
+  // Text alignment for sections
+  const centeredSectionStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center'
+  };
+  
   return (
     <div className="home-container">
-      <div className="hero-section">
+      <div className="hero-section" style={centeredSectionStyle}>
         <h1>Welcome to CubeSat Monitor<span className="accent-dot">.</span></h1>
         <p className="hero-subtitle">Real-time satellite monitoring and analytics platform</p>
         
-        <div className="hero-cta">
+        <div className="hero-cta" style={buttonGroupStyle}>
           <button 
             className="cta-button primary"
             onClick={() => navigate('/dashboard')}
@@ -48,14 +72,9 @@ function Home({ sensorData }) {
           <p>Monitor your CubeSat from anywhere using our web, mobile, and desktop applications.</p>
         </div>
         
-        <div className="feature-card">
-          <div className="feature-icon">🔒</div>
-          <h3>Enterprise Security</h3>
-          <p>Bank-level encryption and security protocols to keep your satellite data safe.</p>
-        </div>
       </div>
       
-      <div className="chatbot-preview">
+      <div className="chatbot-preview" style={centeredSectionStyle}>
         <h2>AI Assistant</h2>
         <p>Our integrated AI assistant powered by Gemini API helps you understand your CubeSat data, provides recommendations, and alerts you to potential issues.</p>
         <div className="chatbot-demo">
@@ -78,23 +97,29 @@ function Home({ sensorData }) {
             </div>
           </div>
         </div>
-        <button 
-          className="cta-button secondary"
-          onClick={() => setShowChatbot(true)}
-        >
-          Try the AI Assistant
-        </button>
+        <div style={centerContainerStyle}>
+          <button 
+            className="cta-button secondary"
+            onClick={() => setShowChatbot(true)}
+            style={{ margin: '0 auto' }}
+          >
+            Try the AI Assistant
+          </button>
+        </div>
       </div>
       
-      <div className="cta-section">
+      <div className="cta-section" style={centeredSectionStyle}>
         <h2>Ready to monitor your CubeSat?</h2>
         <p>Join space agencies and research institutions using our platform to monitor their satellites.</p>
-        <button 
-          className="cta-button primary large"
-          onClick={() => navigate('/dashboard')}
-        >
-          Go to Dashboard
-        </button>
+        <div style={centerContainerStyle}>
+          <button 
+            className="cta-button primary large"
+            onClick={() => navigate('/dashboard')}
+            style={{ margin: '0 auto' }}
+          >
+            Go to Dashboard
+          </button>
+        </div>
       </div>
       
       {showChatbot && (
