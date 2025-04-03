@@ -273,7 +273,7 @@ Context about the current CubeSat status:`;
     <div className="chatbot-container">
       <div className="chatbot-header">
         <h3>CubeSat AI Assistant</h3>
-        <p className="chatbot-subtitle">Powered by Gemini AI</p>
+        <p className="chatbot-subtitle">Powered by Vyom Voyage</p>
         {flightDataState && flightDataState.length > 0 && (
           <div className="data-status">
             <span className="status-dot active"></span>

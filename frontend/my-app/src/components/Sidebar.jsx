@@ -5,15 +5,15 @@ function Sidebar({ activeSection, onMetricSelect }) {
   const navigate = useNavigate();
   const location = useLocation();
   
+  // Updated navItems to include only the four main metrics
   const navItems = [
     { id: 'home', label: 'Home', icon: '🏠', path: '/' },
     { id: 'dashboard', label: 'Dashboard', icon: '📊', path: '/dashboard' },
     { id: 'temperature', label: 'Temperature', icon: '🌡️', metric: 'temperature' },
-    { id: 'humidity', label: 'Humidity', icon: '💧', metric: 'humidity' },
     { id: 'pressure', label: 'Pressure', icon: '🔄', metric: 'pressure' },
     { id: 'altitude', label: 'Altitude', icon: '🏔️', metric: 'altitude' },
     { id: 'speed', label: 'Speed', icon: '⚡', metric: 'speed' },
-    { id: 'settings', label: 'Settings', icon: '⚙️', path: '/dashboard' },
+    { id: 'settings', label: 'Settings', icon: '⚙️', path: '/settings' },
   ];
 
   const handleNavigation = (item) => {
